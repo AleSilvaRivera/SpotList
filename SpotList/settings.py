@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+
+    #my Apps
+
     'api',
-    'rest_framework',
+    'rest_framework', # adding rest_framework the array of apps installed
     'rest_framework.authtoken',
     'rest_auth',
 ]
@@ -55,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+# This is for connecting REACT WITH the API...but not working at the moment
 CORS_ORIGIN_WHITELIST = [
 
     "http://localhost:8080",
@@ -63,6 +66,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 ROOT_URLCONF = 'SpotList.urls'
+#telling django it should use our extend User model and to use email to log in
 AUTH_USER_MODEL = 'api.User'
 
 TEMPLATES = [
@@ -88,10 +92,15 @@ WSGI_APPLICATION = 'SpotList.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#Connection and configuration of  the database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'spotList',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': ''
+
     }
 }
 
@@ -134,10 +143,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# setting up permission
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
+
+    # Setting up JWT Authentication end points
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
