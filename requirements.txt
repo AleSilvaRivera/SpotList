@@ -1,0 +1,5 @@
+PostgreSQL connector:
+psycopg2 
+djangorestframework
+django-rest-auth
+django-rest-framework-jwt

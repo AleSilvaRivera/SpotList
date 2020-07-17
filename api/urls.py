@@ -3,7 +3,9 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from api.views import UserViewSet
 
-router = routers.DefaultRouter()
+#API endpoints for the user model
+
+router = routers.DefaultRouter()  # defines the standard REST endpoints
 router.register(r'users', UserViewSet)
 
 urlpatterns = [

@@ -7,16 +7,16 @@ from api.serializers import UserSerializer
 from api.permissions import IsLoggedInUserOrAdmin, IsAdminUser
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = User.objects.all() # list of the user objects
+    serializer_class = UserSerializer # serializer class to be used for the model instances
 
-    # Add this code block
+    # permissions, who can delete or update users....
     def get_permissions(self):
         permission_classes = []
         if self.action == 'create':
-            permission_classes = [AllowAny]
+            permission_classes = [AllowAny]  # anyone can create an user or register himself
         elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
             permission_classes = [IsLoggedInUserOrAdmin]
         elif self.action == 'list' or self.action == 'destroy':
-            permission_classes = [IsAdminUser]
+            permission_classes = [IsAdminUser] # it has to be an user....
         return [permission() for permission in permission_classes]
