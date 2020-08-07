@@ -1,0 +1,207 @@
+INSTALL PYTHON, PIP, AND THE EB CLI ON WINDOWS
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html
+
+
+Completed all the steps, python is running, pip and eb-cli3
+
+INSTALLING VENV 
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html
+
+Installing the python Envoriment 
+Installing collected packages: distlib, appdirs, filelock, virtualenv
+  WARNING: The script virtualenv.exe is installed in 'C:\Users\paula\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed appdirs-1.4.4 distlib-0.3.1 filelock-3.0.12 virtualenv-20.0.27
+
+
+*Added system env path to Envoriment variables:
+'C:\Users\paula\AppData\Roaming\Python\Python38\Scripts'
+
+C:\Users\paula\PycharmProjects\test1
+
+
+
+Paths for Python 3.8 
+C:\Users\paula\AppData\Local\Programs\Python\Python38-32\
+Path for pip
+C:\Users\paula\AppData\Local\Programs\Python\Python38-32\Scripts\
+
+
+
+
+
+OPEN LINKS 
+https://www.youtube.com/watch?v=_uQrJ0TkZlc
+https://www.youtube.com/watch?v=46DeAs2IKxs&list=PLEsfXFp6DpzTD1BD1aWNxS2Ep06vIkaeW&index=14&t=0s
+https://www.youtube.com/watch?v=i6cwBiz7BuQ&list=PLgCYzUzKIBE_dil025VAJnDjNZHHHR9mW&index=1
+
+github
+https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11
+
+
+DJANGO TO ELASTIC BEANS
+https://www.youtube.com/watch?time_continue=182&v=ypnEf7W8db0&feature=emb_logo
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/python-development-environment.html#python-common-setup-venv
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-started.html
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-virtualenv.html
+
+https://www.youtube.com/watch?v=51YwXvJ9LOE&feature=youtu.be
+https://github.com/aws/aws-elastic-beanstalk-cli-setup
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
+https://stackoverflow.com/questions/8921188/issue-with-virtualenv-cannot-activate
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+
+DJANGO +DB TO EB
+https://realpython.com/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/#elastic-beanstalk-vs-ec2
+
+https://realpython.com/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/#elastic-beanstalk-vs-ec2
+
+VE PYTHON
+
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+
+
+WINDOWS/UBUNTU
+
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+
+https://www.youtube.com/watch?v=loC7VfgRT-I
+
+
+
+
+
+
+STEPS I FOLLOWED 
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+Enable Linux....
+Enable Virtual Machine 
+Upgraded my system to Version (Make sure it is updated wind+R) 
+Had to restart several times 
+Install the kernel for Ubuntu-run-install(installed and desinstale..voli a instalar)
+wsl version 2 set to two
+Descargue Ubuntu
+wsl --list --verbose
+wsl --set-version <distribution name> <versionNumber>
+
+wsl --set-default-version 2
+https://www.youtube.com/watch?v=loC7VfgRT-I
+
+
+
+deactivate (virtual env)
+
+code . TO OPEN MY CODE IN 
+
+
+paula@DESKTOP-BKTPP80:~$ . /temp/eb_py_app3/bin/activate
+
+paula@DESKTOP-BKTPP80:~$ sudo virtualenv -p python3 /temp/eb_py_app3
+[sudo] password for paula:
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /temp/eb_py_app3/bin/python3
+Also creating executable in /temp/eb_py_app3/bin/python
+Installing setuptools, pkg_resources, pip, wheel...done.
+paula@DESKTOP-BKTPP80:~$ . /temp/eb_py_app3/bin/activate
+(eb_py_app3) paula@DESKTOP-BKTPP80:~$
+
+
+paula@DESKTOP-BKTPP80:~$ sudo virtualenv -p python3 /temp/eb_py_app3
+[sudo] password for paula:
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /temp/eb_py_app3/bin/python3
+Also creating executable in /temp/eb_py_app3/bin/python
+Installing setuptools, pkg_resources, pip, wheel...done.
+paula@DESKTOP-BKTPP80:~$ . /temp/eb_py_app3/bin/activate
+
+
+(eb_py_app3) paula@DESKTOP-BKTPP80:~$ python3 -m pip install awsebcli
+
+WORKING DANIEL HELP:
+paula@DESKTOP-BKTPP80:~$ virtualenv --python=python3 eb-virt
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/paula/eb-virt/bin/python3
+Also creating executable in /home/paula/eb-virt/bin/python
+Installing setuptools, pkg_resources, pip, wheel...done.
+
+INSTALL DJANGO
+paula@DESKTOP-BKTPP80:~$ source ~/eb-virt/bin/activate
+(eb-virt) paula@DESKTOP-BKTPP80:~$ pip install django==2.1.1
+Collecting django==2.1.1
+
+REQUIREMENTS TXT
+(eb-virt) paula@DESKTOP-BKTPP80:~$ pip freeze
+Django==2.1.1
+
+CREATE DJANGO PROJECT/RUN SERVER
+(eb-virt) paula@DESKTOP-BKTPP80:~$ django-admin startproject ebdjango
+(eb-virt) paula@DESKTOP-BKTPP80:~$ cd ebdjango
+(eb-virt) paula@DESKTOP-BKTPP80:~/ebdjango$ python manage.py runserver
+
+REQUIREMENTS TXT
+^C(eb-virt) paula@DESKTOP-BKTPP80:~/ebdjango$ pip freeze > requirements.txt
+(eb-virt) paula@DESKTOP-BKTPP80:~/ebdjango$ mkdir .ebextensions
+
+ebextensions file 
+
+(eb-virt) paula@DESKTOP-BKTPP80:~/ebdjango$ mkdir .ebextensions
+
+
+OPEN PROJECT IN VB 
+(eb-virt) paula@DESKTOP-BKTPP80:~/ebdjango$ code .
+
+
+START EB APPLICATION
+paula@DESKTOP-BKTPP80:~/ebdjango$ eb init -p python-3.6 django-tutorial
+
+Notes must have python 3.6 installed!
+
+
+https://stackoverflow.com/questions/42974841/bad-interpreter-no-such-file-or-directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
